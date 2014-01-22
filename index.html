@@ -22,7 +22,13 @@
 <h2>AIX JFS2 Data Recovery----j2recover</h2>
 <p>j2recover is the most powerful tool for jfs2 data recovery in AIX. </p>
 
+<p> To recover complete file as much as possible, user may run j2recover with following option:
+./j2recover -c <copydir> /dev/lvname
 
+To recover data as much as possible, user may run j2recover with following option:
+./j2recover -c <copydir> -p all -x <partialdir> /dev/lvname
+
+</p>
 
 
 <hr>
