@@ -13,23 +13,36 @@
 
 <A href="/index.html"></a>
 		<div id="sectionnav">
-				<A href="/faq.txt"><b>FAQ</b></a><br>
-				<b>Contact us: j2recover@163.com</b>		
+				<b>Email: j2recover@163.com</b>		
 				<br>
 				Download: <a href="/j2recoverlist"><font color="#E21B1B">j2recoverlist</font></a>
 				<br>
 				<div id="content">
 <h2>AIX JFS2 Data Recovery----j2recover</h2>
-<p>j2recover is the most powerful tool for jfs2 data recovery in AIX. </p>
-
-<p> To recover complete file as much as possible, user may run j2recover with following option:
-./j2recover -c <copydir> /dev/lvname
-
-To recover data as much as possible, user may run j2recover with following option:
-./j2recover -c <copydir> -p all -x <partialdir> /dev/lvname
-
+<p>j2recover is the most powerful tool for jfs2 data recovery in AIX, 
+which can be used for mounted or unmounted jfs2 file systems.
 </p>
 
+<p>
+When j2recover is used for unmounted file system,
+it will try best to recover inodes in their original location without copy,
+thus greatly improved the performance since it minimized the IO activity,
+and also greatly saved disk space for restore.
+</p>
+
+<p>
+Sometimes some file systems of production system can not be unmounted when files are wrongly deleted.
+In such case j2recover can be used for mounted file system,
+and it will copy restored files to specified location.
+</p>
+
+<p>
+Sometimes deleted files maybe has been overwritten by other files.
+But some files(such as text file) might still valuable even it has been partially overwritten.
+j2recover can also restore deleted files even they are partially or totally overwritten.
+And j2recover will report what blocks are overwritten in the file.  
+Thus user can check the file content and get those valuable data without overwriting.
+</p>
 
 <hr>
 </div>
