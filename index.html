@@ -1,67 +1,70 @@
-﻿<!-- 由 Google 结构化数据标记助手添加的微数据标记。 -->
-<html><head><meta name="description" content="AIX Undelete files. AIX jfs2 file recovery."/>
-<meta name="keywords" content=" aix, jfs2, recovery utility, unremoving files, undelete, j2recover, restore, j2restore, data recovery"/>
-<title>j2recover - The AIX jfs2 data recovery tool</title>
-<meta name="baidu-site-verification" content="FTvvCT3qzl" />
-<link rel="stylesheet" type="text/css" href="/css/web.css"/>
-</head>
+﻿
+<HTML>
+<META Name="description" Content="Recovering lost jfs2 files in AIX.">
+<META Name="keywords" Content="j2undelete, j2recover, undelete aix, unrm, aix jfs2 filesystem recovery files utility, unremoving files, unerase AIX, data recovery">
+<HEAD>
+<TITLE>j2recover.com - The AIX jfs2 recovery company</TITLE>
+<link rel="stylesheet" type="text/css" href="web.css" />
+</HEAD>
 
 
 <body>
+<div id="page">
 
-<span itemscope itemtype="http://schema.org/SoftwareApplication"><div id="page">
-				<div id="content">
-<h1>AIX JFS2 Data Recovery Tool:  
-<span itemprop="name">j2recover</span></h1>
-<hr/>
-<p>j2recover is the most powerful tool for jfs2 
-<span itemprop="applicationCategory">data recovery</span> in 
-<span itemprop="operatingSystem">AIX</span>, 
-which can be used for mounted or unmounted jfs2 file systems.
-</p>
-
-<p>
-When j2recover is used for unmounted file system,
-it will try best to recover inodes in their original location without copy,<br/>
-thus greatly improved the performance since it minimized the IO activity,
-and also greatly saved disk space for restore.
-</p>
-
-<p>
-Sometimes some file systems of production system can not be unmounted when files are wrongly deleted.<br/>
-In such case j2recover can be used for mounted file system,
-and it will copy restored files to specified location.
-</p>
-
-<p>
-Sometimes deleted files maybe has been overwritten by other files.
-But some files(such as text file) might still valuable even it has been partially overwritten.<br/>
-j2recover can also restore deleted files even they are partially or totally overwritten.
-And j2recover will report what blocks are overwritten in the file.<br/>
-Thus user can check the file content and get those valuable data without overwriting.
-</p>
-
-<hr/>
-<b>How to test j2recover</b><br/> 
-1. <b>Download </b><a itemprop="downloadUrl" href="/j2recoverlist"><font color="#E21B1B">j2recoverlist</font></a><br/> 
-2. Create a new jfs2 file system, and create lots files in this test file system.<br/> 
-3. Run "sync;sync;rm -rf *" in test file system.<br/> 
-4. Run j2recoverlist to check what j2recover can restore.	<br/> 
-
-<hr/>
-<b>How to restore deleted files</b><br/> 
-1. umount the file system ASAP if umount is allowed<br/> 
-2. run <a itemprop="downloadUrl" href="/j2recoverlist">j2recoverlist</a> to check what files we can restore<br/> 
-3. send j2recoverlist report file to j2recover@163.com  <br/> 
-
-</div>
-</div>
-<hr/>
+<A href="/index.html"></a>
 		<div id="sectionnav">
-	  <b>Email: 
-<span itemprop="author" itemscope itemtype="http://schema.org/Person">
-<span itemprop="name">j2recover@163.com</span></span></b>		
-	  <br/>
-  	</div></span>
+				<A href="index.html"><b>Home</b></a>				
+				<A href="j2recover.html"><b>j2recover</b></a>
+				<A href="j2undelete.html"><b>j2undelete</b></a>
+				</div>
+<div id="content">
+<h2>AIX JFS2 Recovery</h2>
+<p>We are providing jfs2 recovery software and jfs2 recovery services for AIX. j2recover.com has been involved 
+in all types of incidents related to deleted, missing or inaccessible jfs2 files.</p>
 
-</body></html>
+<p>Both j2undelete and j2recover can be used to recover jfs2 file.</p>
+<p>Here is the recommendation for how to select them:</p>
+
+<table cellpadding="5" border="2" width="100%">
+<tr bgcolor="#BFBFBF" valign="middle">
+		<td width="100" align="center" valign="middle">Recommendation</td>
+		<td width="400" align="center" >Scenery</td>
+		<td width="700">Reason</td>
+</tr>
+<tr align="left" valign="top">
+		<td >j2undelete<br>
+		</td>
+		<td>
+		<p>The deleted jfs2 file is still used by some process.</p>
+		</td>
+		<td >Since the deleted jfs2 file is still used, it will not be overwritten, thus umount is needless.<br>
+			   In such case j2undelete is the best selection.
+		</td>
+</tr>
+<tr>
+		<td valign="top">j2recover</td><td>
+		<p>The deleted jfs2 file is not used, and umount is allowable</td>
+		<td>In such case we should firstly umount fs to avoid data overwriting. <br> Thus j2recover is the best selection. </td>
+</tr>
+<tr valign="top">
+		<td >j2undelete</td>
+		<td>The deleted jfs2 file is not used, but umount is not allowable, and "j2recoverlist –f" can detect the deleted file</td>
+		<td> In such case we have the risk that the deleted file may be overwritten.  <br>
+         Since j2undelete has most short recovery time, it is the best selection to reduce the data overwriting chance. <br>
+           If j2undelete has alreay been installed in the system and it is used immediately after deletion,
+           we can effectively minimize the the data overwriting chance.</td>
+</tr>
+<tr valign="top">
+		<td >j2recover</td>
+		<td>The deleted jfs2 file is not used, but umount is not allowable, and j2recoverlist can detect the deleted file</td>
+		<td>The full disk scanning of j2recover can recover all deleted files as long as they are not overwritten in the disk. <br>
+			  Even umount is not permitted, j2recover can recover deleted files and copy them to specified place.</td>
+</tr>
+
+</table>
+
+
+<hr>
+</div>
+</div>
+</body>
